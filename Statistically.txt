@@ -1,0 +1,10 @@
+## Title: Statistically
+## Description: Collects statistics about stuff.
+## APIVersion: 100034
+## Version: 34.210421
+## IsLibrary: false
+## Author: Ek1
+## License: BY-SA = Creative Commons Attribution-ShareAlike 4.0 International License
+## SavedVariables: StatisticallySettings StatisticallyQuests StatisticallyCrafting StatisticallyEvent StatisticallyLoot
+
+Statistically.lua

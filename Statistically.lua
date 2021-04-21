@@ -222,8 +222,8 @@ end
 function Statistically.toggleTrackQuest (trueFalse)
 	if trueFalse then
 		Crafting   = ZO_SavedVars:NewAccountWide("StatisticallyCrafting", 1, GetWorldName(), default) or {}	-- Load settings
---		EVENT_MANAGER:RegisterForEvent(ADDON,	EVENT_QUEST_ADDED,	Statistically_EVENT_QUEST_ADDED)
-		EVENT_MANAGER:RegisterForEvent(ADDON,	EVENT_QUEST_ADVANCED,	Statistically_EVENT_QUEST_ADVANCED)
+		EVENT_MANAGER:RegisterForEvent(ADDON,	EVENT_QUEST_ADDED,	Statistically_EVENT_QUEST_ADDED)
+--		EVENT_MANAGER:RegisterForEvent(ADDON,	EVENT_QUEST_ADVANCED,	Statistically_EVENT_QUEST_ADVANCED)
 		EVENT_MANAGER:RegisterForEvent(ADDON,	EVENT_QUEST_COMPLETE,	Statistically_EVENT_QUEST_COMPLETE)
 		EVENT_MANAGER:RegisterForEvent(ADDON,	EVENT_QUEST_REMOVED,	Statistically_EVENT_QUEST_REMOVED)
 	else

@@ -2,8 +2,9 @@ Statistically = {
 	TITLE = "Statistically",	-- Not codereview friendly but enduser friendly version of the add-on's name
 	AUTHOR = "Ek1",
 	DESCRIPTION = "Never tell me the odds.",
-	VERSION = "34.210421",
+	VERSION = "34.210422",
 	LICENSE = "BY-SA = Creative Commons Attribution-ShareAlike 4.0 International License",
+	URL = "https://github.com/Ek1/Statistically"
 }
 local ADDON = "Statistically"	-- Variable used to refer to this add-on. Codereview friendly.
 
@@ -205,15 +206,16 @@ function Statistically_EVENT_QUEST_COMPLETE(eventCode, questName, level, previou
 
 		Session[questName] = nil
 
-		Session[0] = 1 + (Session[0] or 1)
+		Session[0] = 1 + (Session[0] or 0)
 
-		if Session[0] > 6 
+		if Session[0] == 7 
 		and Session["Started"] ~= nil then
-			if Crafting[returingInMap]["Total"]	== nil then
-				Crafting[returingInMap]["Total"] = {}
+			if Crafting[returingInMap][7]	== nil then
+				Crafting[returingInMap][7] = {}
 			end
 			local StartToEnd = os.time() - (Session["Started"] or 0)
-			Crafting[returingInMap]["Total"][StartToEnd] = 1 + (Crafting[returingInMap]["Total"][StartToEnd] or 0)
+			Crafting[returingInMap][7][StartToEnd] = 1 + (Crafting[returingInMap][7][StartToEnd] or 0)
+			Session[0] = 0
 			d( ADDON .. ": " .. returingInMap .. " 7x crafting was done in " .. ZO_FormatTimeLargestTwo(StartToEnd, TIME_FORMAT_STYLE_DESCRIPTIVE_MINIMAL) )
 		end
 	end
